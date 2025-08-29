@@ -35,8 +35,14 @@ def display_inventory(store_dict):
 		print(f'{product} Price: ${details["price"]}, Quantity: {details["quantity"]}')
 
 
-#def most_expensive_product(store_dict):
-	
+def most_expensive_product(store_dict):
+	if len(store_dict) != 0:
+		for details in store_dict.items():
+			return  max(details['price'])
+		#return "STORE IS EMPTY!"
+	else:
+		return 'STORE IS EMPTY!'
+		
 
 
 
@@ -76,7 +82,7 @@ def start():
 		elif option == 4:
 			display_inventory(store)
 		elif option == 5:
-			print('most_expensive_product(store)')
+			print(most_expensive_product(store))
 		elif option == 6:
 			print(total_potential_sales(store))
 		elif option == 7:
